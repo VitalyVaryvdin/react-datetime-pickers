@@ -57,7 +57,7 @@ export const TimePickerGrid: React.VFC<TimePickerGridProps & {
         return times;
     }, []);
 
-    const handleClick = useCallback(({date}) => () => {
+    const handleClick = useCallback(({date}: { date: Date, disabled: boolean }) => () => {
         let d
         if (selected instanceof Date) d = selected
         if (!d) d = new Date()
